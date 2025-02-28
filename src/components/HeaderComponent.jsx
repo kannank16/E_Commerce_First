@@ -11,16 +11,18 @@ import Form from "react-bootstrap/Form";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Button from "react-bootstrap/Button";
-import {LinkContainer } from 'react-router-bootstrap'
+import { LinkContainer } from "react-router-bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import  {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const HeaderComponent = () => {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand as={Link} to='/'>Best Online Shop</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">
+            Best Online Shop
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
@@ -38,26 +40,40 @@ const HeaderComponent = () => {
               </InputGroup>
             </Nav>
             <Nav>
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
-              <Nav.Link href="#pricing">
-                <Badge bg="danger">2</Badge>cart
+              <Nav.Link as={Link} to="/admin/orders">
+                Admin
               </Nav.Link>
-              <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
+              <Nav.Link as={Link} to="/login">
+                login
+              </Nav.Link>
+              <Nav.Link as={Link} to="/register">
+                Register
+              </Nav.Link>
+              <Nav.Link as={Link} to={"/cart"}>
+                <Badge bg="danger ">2</Badge>
+                <i className="bi bi-cart4 me-1"></i>Cart
+              </Nav.Link>
+
+              <NavDropdown title="kannan" id="collapsible-nav-dropdown">
+                <NavDropdown.Item
+                  eventKey={"/user/my-order"}
+                  as={Link}
+                  to="/user/my-order"
+                >
+                  my orders
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
+                <NavDropdown.Item
+                  eventKey={"/user/profile"}
+                  as={Link}
+                  to="/user/profile"
+                >
+                  my profile
                 </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
+                <NavDropdown.Item eventKey={"/"} as={Link} to="/">
+                  logout
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
-            
           </Navbar.Collapse>
         </Container>
       </Navbar>
