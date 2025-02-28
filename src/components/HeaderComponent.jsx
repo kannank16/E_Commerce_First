@@ -11,13 +11,16 @@ import Form from "react-bootstrap/Form";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Button from "react-bootstrap/Button";
+import {LinkContainer } from 'react-router-bootstrap'
+import "bootstrap-icons/font/bootstrap-icons.css";
+import  {Link} from 'react-router-dom'
 
 const HeaderComponent = () => {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="/">Best Online Shop</Navbar.Brand>
+          <Navbar.Brand as={Link} to='/'>Best Online Shop</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
