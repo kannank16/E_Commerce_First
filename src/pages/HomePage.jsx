@@ -1,9 +1,9 @@
 import React from 'react'
+import ProductCarousel from '../components/ProductCarousel'
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
-  )
+<ProductCarousel/>  )
 }
 
 export default HomePage
