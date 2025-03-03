@@ -44,6 +44,10 @@ function App() {
             <Route path="/home" element={<HomePage />} />
             <Route path="/cart" element={<CartPage />} />
             <Route
+              path="/product-details"
+              element={<ProductDetailsPage />}
+            />
+            <Route
               path="/product-details/:id"
               element={<ProductDetailsPage />}
             />
