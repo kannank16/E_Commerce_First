@@ -49,7 +49,7 @@ const HeaderComponent = () => {
               <Nav.Link as={Link} to="/register">
                 Register
               </Nav.Link>
-              <Nav.Link as={Link} to={"/cart"}>
+              <Nav.Link as={Link} to={"/cart"} className="position-relative">
                 <Badge bg="danger ">2</Badge>
                 <i className="bi bi-cart4 me-1"></i>Cart
               </Nav.Link>

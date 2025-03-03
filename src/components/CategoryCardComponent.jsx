@@ -4,8 +4,8 @@ import Card from 'react-bootstrap/Card';
 
 const CategoryCardComponent = () => {
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src="https://picsum.photos/200/200" />
+    <Card>
+      <Card.Img variant="top" src="https://picsum.photos/80/80" />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
         <Card.Text>
