@@ -1,0 +1,58 @@
+.cht-btn {
+  position: fixed;
+  right: 14px;
+  bottom: 30px;
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  color: aliceblue;
+  z-index: 1;
+
+}
+
+.cht-btn .close {
+  display: none;
+}
+
+#check:checked~ .cht-btn i{
+    display: block;
+
+}
+#check:checked~ .cht-btn .comment{
+    display: none;
+    
+}
+#check:checked~ .cht-btn{
+    background-color: red;
+    
+}
+#check{
+display: none;
+}
+.chat-wrapper{
+    position: fixed;
+    right: 20px;
+    width: 300px;
+    bottom: 100px;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.4s linear;
+}
+
+.chat-header{
+    background-color: blue;
+    color: aliceblue;
+    padding: 30px;
+    margin-bottom: 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+#check:checked~.chat-wrapper{
+    opacity: 1;
+
+}

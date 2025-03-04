@@ -25,7 +25,8 @@ const CategoryCardComponent = ({category,idx}) => {
   ];
 
   return (
-    <Card>
+    
+    <Card  className="">
       <Card.Img variant="top" src={Image[idx]} className='Image_hw'/>
       <Card.Body>
         <Card.Title>{category}</Card.Title>
