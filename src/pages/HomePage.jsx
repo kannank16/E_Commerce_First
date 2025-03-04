@@ -6,23 +6,22 @@ import { Container } from "react-bootstrap";
 
 const HomePage = () => {
   const categories = [
+    "laptops",
     "tapLets",
     "Monitors",
     "games",
     "printers",
-    "laptops",
     "camera",
     "books",
     "iphone",
   ];
   return (
     <>
-        <ProductCarousel />
-        <Container>
-
+      <ProductCarousel />
+      <Container>
         <Row xs={1} md={2} className="g-4 mt-5">
-          {categories.map(() => (
-            <CategoryCardComponent />
+          {categories.map((category, idx) => (
+            <CategoryCardComponent key={idx} category={category} idx={idx} />
           ))}
         </Row>
       </Container>

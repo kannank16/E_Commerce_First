@@ -21,3 +21,8 @@ height: 170px;
     height:500px;
     fill:cover;
 }
+.Image_hw{
+    height:360px;
+    width:100%;
+    object-fit: cover;
+}
