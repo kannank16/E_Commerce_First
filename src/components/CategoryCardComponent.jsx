@@ -11,6 +11,7 @@ import Tablets from "../assets/images/HomePage_images/Tablets.jpeg";
 
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import {Link} from 'react-router-dom'
 
 const CategoryCardComponent = ({category,idx}) => {
   const Image = [
@@ -34,7 +35,7 @@ const CategoryCardComponent = ({category,idx}) => {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Button as={Link} to='/product-list' variant="primary">Go to Category</Button>
       </Card.Body>
     </Card>
   );

@@ -42,8 +42,27 @@ display: none;
     z-index: 1;
     opacity: 0;
     transition: all 0.4s linear;
+    background-color: white;
+    border-radius: 5px;
 }
 
+
+
+.chat-form{
+    padding: 15px;
+}
+
+.chat-form textarea{
+    margin-bottom: 10px;
+}
+.chat-form button{
+    margin-top: 10px;
+}
+.form-control:focus{box-shadow: none;}
+.chat-msg{
+    max-height: 300px;
+    overflow: auto;
+}
 .chat-header{
     background-color: blue;
     color: aliceblue;
