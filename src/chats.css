@@ -50,6 +50,7 @@ display: none;
 
 .chat-form{
     padding: 15px;
+    /* z-index: 3; */
 }
 
 .chat-form textarea{

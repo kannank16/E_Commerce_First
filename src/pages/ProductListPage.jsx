@@ -20,11 +20,12 @@ const ProductListPage = () => {
          <Container fluid>
       <Row >
         <Col md={3}><ListGroup variant="flush">
-        <ListGroup.Item>{<SortOptionsComponent />}</ListGroup.Item>
-        <ListGroup.Item>{<PriceFilterComponent />}</ListGroup.Item>
-        <ListGroup.Item>{<RatingFilterComponent />}</ListGroup.Item>
-        <ListGroup.Item>{<CategoryFilterComponent/>}</ListGroup.Item>
-        <ListGroup.Item>{<AttributeFilterComponent />}</ListGroup.Item>
+        <ListGroup.Item  className="mb-3 mt-1"><SortOptionsComponent /></ListGroup.Item>
+        <ListGroup.Item>Filter: <br/><PriceFilterComponent /></ListGroup.Item>
+        <ListGroup.Item>
+          <RatingFilterComponent /></ListGroup.Item>
+        <ListGroup.Item><CategoryFilterComponent/></ListGroup.Item>
+        <ListGroup.Item><AttributeFilterComponent /></ListGroup.Item>
         <ListGroup.Item><Button variant='primary'> Filter
           </Button>
           <Button variant='danger'>reset filter</Button></ListGroup.Item>

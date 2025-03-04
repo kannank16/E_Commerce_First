@@ -1,23 +1,22 @@
-import React from 'react'
-import Form from 'react-bootstrap/Form';
-
+import React from "react";
+import Form from "react-bootstrap/Form";
 
 const CategoryFilterComponent = () => {
   return (
-    <div> <Form>
-    {['checkbox', 'radio'].map((type) => (
-      <div key={type} className="mb-3">
-        <Form.Check type={type} id={`check-api-${type}`}>
-          <Form.Check.Input type={type} isValid />
-          <Form.Check.Label>{`Custom api ${type}`}</Form.Check.Label>
-          <Form.Control.Feedback type="valid">
-            You did it!
-          </Form.Control.Feedback>
-        </Form.Check>
-      </div>
-    ))}
-  </Form></div>
-  )
-}
+    <div>
+      <span className="fw-bold">Category</span>
+      <Form>
+        {Array.from({ length: 5 }).map((_, idx) => (
+          <div key={idx} className="">
+            <Form.Check type="checkbox" id={`check-api-${idx}`}>
+              <Form.Check.Input type="checkbox" isValid />
+              <Form.Check.Label>Category- {idx+1} </Form.Check.Label>
+            </Form.Check>
+          </div>
+        ))}
+      </Form>
+    </div>
+  );
+};
 
-export default CategoryFilterComponent
+export default CategoryFilterComponent;
