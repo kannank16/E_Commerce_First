@@ -31,11 +31,13 @@ import AdminAnalyticsPage from "./admin/AdminAnalyticsPage";
 import HeaderComponent from "./components/HeaderComponent";
 import FooterComponent from "./components/FooterComponent";
 import RoutesWithUserChatComponent from "./components/user/RoutesWithUserChatComponent";
+import ScrollToTop from "./utils/ScrollToTop";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <ScrollToTop/>
         <HeaderComponent />
 
         <Routes>
