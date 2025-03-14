@@ -12,8 +12,9 @@ import ImageZoom from "js-image-zoom";
 
 const ProductDetailsPage = () => {
   var options = {
-    width: 800,
+    width: 400,
     zoomWidth: 600,
+    
     offset: { vertical: 0, horizontal: 10 },
   };
   useEffect(() => {
