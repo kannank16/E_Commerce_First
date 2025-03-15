@@ -25,8 +25,14 @@ const RegisterPage = () => {
   };
 
   const onChange = () => {
-    const password = document.querySelector('input[type="password"]');
-    const confirmPassword = document.querySelector('input[type="confirmP assword"]');
+    const password = document.querySelector('input[name="password"]');
+    const confirmPassword = document.querySelector('input[name="confirmPassword"]');
+    if(confirmPassword.value===password.value){
+      confirmPassword.setCustomValidity('')
+    }
+    else{
+      confirmPassword.setCustomValidity('password do not match')
+    }
   };
 
   return (
@@ -89,8 +95,10 @@ const RegisterPage = () => {
                 <Form.Control
                   required
                   type="Password"
+                  name="password"
                   placeholder="Enter Your Password"
                   minLength={8}
+                  onChange={onChange}
                   // defaultValue="Mark"
                 />
                 <Form.Control.Feedback type="invalid">
@@ -109,8 +117,11 @@ const RegisterPage = () => {
                 <Form.Control
                   required
                   minLength={8}
-                  type="confirmPassword"
+                  onChange={onChange}
+
+                  type="password"
                   placeholder="confirm Password"
+                  name='confirmPassword'
                   // defaultValue="Mark"
                 />
                 <Form.Control.Feedback type="invalid">
