@@ -14,28 +14,29 @@ import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   const [validated, setValidated] = useState(false);
-  
-    const handleSubmit = (event) => {
-      const form = event.currentTarget;
-      if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-  
-      setValidated(true);
-    };
-  
-    const onChange = () => {
-      const password = document.querySelector('input[name="password"]');
-      const confirmPassword = document.querySelector('input[name="confirmPassword"]');
-      if(confirmPassword.value===password.value){
-        confirmPassword.setCustomValidity('')
-      }
-      else{
-        confirmPassword.setCustomValidity('password do not match')
-      }
-    };
-  
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
+
+  const onChange = () => {
+    const password = document.querySelector('input[name="password"]');
+    const confirmPassword = document.querySelector(
+      'input[name="confirmPassword"]'
+    );
+    if (confirmPassword.value === password.value) {
+      confirmPassword.setCustomValidity("");
+    } else {
+      confirmPassword.setCustomValidity("password do not match");
+    }
+  };
+
   return (
     <div>
       <Container>
@@ -43,7 +44,6 @@ const LoginPage = () => {
           <Col md={6}>
             <h1>Login Page</h1>
             <Form noValidate validated={validated} onSubmit={handleSubmit}>
-             
               <Form.Group as={Col} controlId="FormBasicEmail" className="mb-4">
                 <Form.Label>Email</Form.Label>
                 <Form.Control
@@ -78,7 +78,6 @@ const LoginPage = () => {
                   password must contain 8 characters
                 </Form.Text>
               </Form.Group>
-              
               <Form.Group className="mb-3">
                 <Form.Check
                   required
@@ -87,8 +86,8 @@ const LoginPage = () => {
                   feedbackType="invalid"
                 />
               </Form.Group>
-              Don't you Have an Account Already ? <Link to={"/register"}>Register</Link>{" "}
-              <br />
+              Don't you Have an Account Already ?{" "}
+              <Link to={"/register"}>Register</Link> <br />
               <Button type="submit" className="mt-2">
                 <Spinner
                   as="span"
@@ -102,7 +101,8 @@ const LoginPage = () => {
             </Form>
             <Alert variant="danger" className="mt-2">
               {" "}
-wrong credentials            </Alert>
+              wrong credentials{" "}
+            </Alert>
           </Col>
         </Row>
       </Container>
