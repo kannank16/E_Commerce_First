@@ -159,6 +159,6 @@ const RegisterPage = () => {
       </Container>
     </div>
   );
-};
+ };
 
 export default RegisterPage;

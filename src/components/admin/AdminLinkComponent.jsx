@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const AdminLinkComponent = () => {
   return (
     <div>
-      <Navbar>
+      <Navbar className="bg-light " variant="light">
         <Nav className="flex-column">
           <NavLink as={Link} to="/admin/orders">
             orders
