@@ -1,6 +1,16 @@
 import React from "react";
-import { Row, Col, Form, Button, CloseButton, Table,Alert } from "react-bootstrap";
+import {
+  Row,
+  Col,
+  Form,
+  Button,
+  CloseButton,
+  Table,
+  Alert,
+  Image,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Printer from "../assets/images/HomePage_images/Printers.jpeg";
 import { useState } from "react";
 
 const AdminEditProductPage = () => {
@@ -16,6 +26,14 @@ const AdminEditProductPage = () => {
     setValidated(true);
   };
 
+  const onHover = {
+    cursor: "pointer",
+    position: "absolute",
+    left:'5px',
+    top:'-10px',
+    transform:'scale(2.7)'
+
+  };
   return (
     <div>
       <Row className="mt-5 justify-content-md-center ">
@@ -31,22 +49,37 @@ const AdminEditProductPage = () => {
           {/* <Button></Button> */}
         </Col>
         <Col md={6}>
-          <h1>Create New Product</h1>
+          <h1>Edit Product</h1>
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Name</Form.Label>
-              <Form.Control type="text" name="name" required />
+              <Form.Control
+                type="text"
+                name="name"
+                required
+                defaultValue={"panasonic"}
+              />
             </Form.Group>
             <Form.Group
               className="mb-3"
               controlId="exampleForm.ControlTextarea1"
             >
               <Form.Label>Description</Form.Label>
-              <Form.Control as="textarea" rows={3} required />
+              <Form.Control
+                as="textarea"
+                rows={3}
+                required
+                defaultValue={"product description"}
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="FormBasicCount">
               <Form.Label>Count in Stock</Form.Label>
-              <Form.Control type="number" name="count" required />
+              <Form.Control
+                type="number"
+                name="count"
+                required
+                defaultValue={3}
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="FormBasisPrice">
               <Form.Label>Price</Form.Label>
@@ -64,13 +97,6 @@ const AdminEditProductPage = () => {
                 <option value="2">Tv</option>
                 <option value="3">Games</option>
               </Form.Select>
-            </Form.Group>
-
-            <Form.Group controlId="formBasicCategory" className="mb-3 mt-3">
-              <Form.Label>
-                or create a new category(example computer/laptops)
-              </Form.Label>
-              <Form.Control type="text" required />
             </Form.Group>
 
             <Row>
@@ -116,27 +142,55 @@ const AdminEditProductPage = () => {
             </Table>
             <Row>
               <Col md={6}>
-              <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Choose New Attribute</Form.Label>
-              <Form.Control type="text" name="name" required placeholder="first choose or create category"/>
-            </Form.Group>
+                <Form.Group
+                  className="mb-3"
+                  controlId="exampleForm.ControlInput1"
+                >
+                  <Form.Label>Choose New Attribute</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="name"
+                    required
+                    placeholder="first choose or create category"
+                  />
+                </Form.Group>
               </Col>
               <Col md={6}>
-                {" "}<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>choose new attribute value</Form.Label>
-              <Form.Control type="text" name="name" required placeholder="first choice or create category"/>
-            </Form.Group>
+                {" "}
+                <Form.Group
+                  className="mb-3"
+                  controlId="exampleForm.ControlInput1"
+                >
+                  <Form.Label>choose new attribute value</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="name"
+                    required
+                    placeholder="first choice or create category"
+                  />
+                </Form.Group>
               </Col>
             </Row>
-            <Alert variant='info'>After Typing Attribute key and Value press on enter field</Alert>
+            <Alert variant="info">
+              After Typing Attribute key and Value press on enter field
+            </Alert>
             <Form.Group controlId="formFile" className="mb-3 mt-3">
               <Form.Label>Images</Form.Label>
+              <Row>
+                <Col xs={3} style={{position:"relative"}}>
+                  <Image src={Printer} fluid></Image>
+                  <i className="bi bi-x text-danger " style={onHover}></i>
+                </Col><Col xs={3} style={{position:"relative"}}>
+                  <Image src={Printer} fluid></Image>
+                  <i className="bi bi-x text-danger " style={onHover}></i>
+                </Col>
+              </Row>{" "}
               <Form.Control type="file" required />
             </Form.Group>
 
             <Form.Group controlId="formFile" className="mb-3 ">
               <Button type="submit" variant="primary">
-                create
+                Update
               </Button>
             </Form.Group>
           </Form>
