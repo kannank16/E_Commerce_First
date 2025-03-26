@@ -57,7 +57,7 @@ const AdminOrdersDetailPage = () => {
                 <h1>Order items</h1>{" "}
                 <ListGroup variant="flush">
                   {Array.from({ length: 3 }).map((item, idx) => (
-                    <CartItemComponent />
+                    <CartItemComponent key={idx}/>
                   ))}
                 </ListGroup>
               </Col>

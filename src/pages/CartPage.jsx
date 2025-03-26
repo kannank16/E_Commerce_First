@@ -22,7 +22,7 @@ const CartPage = () => {
             <ListGroup>
               {Array.from({ length: 3 }).map((item, idx) => (
                 <>
-                  <CartItemComponent /> <br />
+                  <CartItemComponent key={idx}/> <br />
                 </>
               ))}
             </ListGroup>

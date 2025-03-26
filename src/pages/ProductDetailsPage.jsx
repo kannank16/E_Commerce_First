@@ -89,7 +89,7 @@ const ProductDetailsPage = () => {
               </Col>
               <hr />
               {Array.from({ length: 5 }).map((item, idx) => (
-                <ListGroup.Item>
+                <ListGroup.Item key={idx}>
                   john <br />
                   <Rating initialValue={4} size={20} />
                   <br />
